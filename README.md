@@ -2,4 +2,7 @@
 # WebApp
 Web application for KTU semester project written in .NET Core 3.1
 # Setup
-You need the .NET Core 3.1 SDK (Download: https://dotnet.microsoft.com/download)
+You need the .NET Core 3.1 SDK (Download: https://dotnet.microsoft.com/download)  
+Project can be launched using Visual Studio
+1. Build the program
+2. Run
