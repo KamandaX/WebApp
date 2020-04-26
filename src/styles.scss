@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 
 * {
   font-family: "Lato", Arial, Helvetica, sans-serif;
@@ -8,72 +9,4 @@
 
 body {
   margin: 0;
-}
-
-.button {
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  border: none;
-  outline: none;
-  transition: 0.1s ease-out;
-
-  color: #fafafa;
-  background-color: #147aaf;
-  border: 2px solid #147aaf;
-
-  &:hover {
-    background-color: darken($color: #147aaf, $amount: 5);
-    border: 2px solid darken($color: #147aaf, $amount: 5);
-    cursor: pointer;
-  }
-
-  &:active {
-    background-color: darken($color: #147aaf, $amount: 10);
-    border: 2px solid darken($color: #147aaf, $amount: 10);
-  }
-}
-
-.button-secondary {
-  color: #147aaf;
-  background-color: transparent;
-  border: 2px solid rgba($color: #147aaf, $alpha: 0.3);
-
-  &:hover {
-    background-color: rgba($color: #147aaf, $alpha: 0.1);
-    border: 2px solid rgba($color: #147aaf, $alpha: 0.3);
-  }
-
-  &:active {
-    background-color: rgba($color: #147aaf, $alpha: 0.3);
-    border: 2px solid rgba($color: #147aaf, $alpha: 0.3);
-  }
-}
-
-.button-tertiary {
-  color: #147aaf;
-  background-color: transparent;
-  border: 2px solid transparent;
-  text-decoration: underline;
-
-  &:hover {
-    background-color: transparent;
-    border: 2px solid transparent;
-    color: darken($color: #147aaf, $amount: 5);
-  }
-
-  &:active {
-    background-color: transparent;
-    border: 2px solid transparent;
-    color: darken($color: #147aaf, $amount: 10);
-  }
-}
-
-.button-large {
-  padding: 0.375rem 1.5rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  line-height: 1.75;
 }
