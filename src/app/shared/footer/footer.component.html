@@ -1,0 +1,31 @@
+<section class="footer-section">
+  <ng-container *ngIf="getStartedSectionVisible">
+    <div class="getStartedSection">
+      <div>
+        <h2 class="text firstLine">Ready to make a choice?</h2>
+        <h2 class="text secondLine">Let's get started!</h2>
+      </div>
+      <app-button [isBig]="true">Open App</app-button>
+    </div>
+  </ng-container>
+  <div class="footer-content">
+    <div class="footer-section copyright">
+      <strong>Copyright</strong>
+      <ul></ul>
+    </div>
+    <div class="footer-section company">
+      <strong>Company</strong>
+      <ul>
+        <li (click)="itemClicked.emit('About Us')">About Us</li>
+        <li (click)="itemClicked.emit('Contact Us')">Contact Us</li>
+      </ul>
+    </div>
+    <div class="footer-section information">
+      <strong>Further Information</strong>
+      <ul>
+        <li (click)="itemClicked.emit('Terms & Conditions')">Terms & Conditions</li>
+        <li (click)="itemClicked.emit('Privacy Policy')">Privacy Policy</li>
+      </ul>
+    </div>
+  </div>
+</section>
