@@ -1,0 +1,8 @@
+<ng-container ngSwitch="buttonType">
+  <button class="button button-secondary" [class.button-large]="isBig" *ngSwitchCase="secondStyle">
+    <ng-content></ng-content></button>
+  <button class="button button-tertiary" [class.button-large]="isBig" *ngSwitchCase="tertiaryStyle">
+    <ng-content></ng-content></button>
+  <button class="button" [class.button-large]="isBig" *ngSwitchDefault>
+    <ng-content></ng-content></button>
+</ng-container>

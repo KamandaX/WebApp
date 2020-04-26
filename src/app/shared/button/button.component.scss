@@ -1,0 +1,69 @@
+@import "../../../styles/colors.scss";
+
+.button {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  transition: 0.1s ease-out;
+
+  color: #fafafa;
+  background-color: $col_denim;
+  border: 2px solid $col_denim;
+
+  &:hover {
+    background-color: darken($color: $col_denim, $amount: 5);
+    border: 2px solid darken($color: $col_denim, $amount: 5);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: darken($color: $col_denim, $amount: 10);
+    border: 2px solid darken($color: $col_denim, $amount: 10);
+  }
+}
+
+.button-secondary {
+  color: #147aaf;
+  background-color: $col_white;
+  border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+
+  &:hover {
+    background-color: rgba($color: $col_denim, $alpha: 0.1);
+    border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+  }
+
+  &:active {
+    background-color: rgba($color: $col_denim, $alpha: 0.3);
+    border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+  }
+}
+
+.button-tertiary {
+  color: $col_denim;
+  background-color: transparent;
+  border: 2px solid transparent;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: darken($color: $col_denim, $amount: 5);
+  }
+
+  &:active {
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: darken($color: $col_denim, $amount: 10);
+  }
+}
+
+.button-large {
+  padding: 0.375rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.75;
+}
