@@ -9,7 +9,6 @@ import {Constants} from '../constants';
 export class ButtonComponent {
 
   @Input() buttonStyle: string;
-  @Input() buttonText: string;
   @Input() isBig: boolean;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
 
