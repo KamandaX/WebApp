@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Constants} from '../constants';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Constants } from '../constants';
 
 @Component({
   selector: 'app-button',
