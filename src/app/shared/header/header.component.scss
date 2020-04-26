@@ -1,0 +1,25 @@
+.header-section {
+  height: 100px;
+  width: 100%;
+  background-color: #288CC7;
+  .header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    .icon-section {
+      display: inline-flex;
+      height: 52px;
+      .title{
+        font-family: "Press Start 2P", sans-serif;
+        font-size: 36px;
+        line-height: 52px;
+      }
+    }
+    .sign-up {
+      margin-right: 30px;
+    }
+  }
+}
