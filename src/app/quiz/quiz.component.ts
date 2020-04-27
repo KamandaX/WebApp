@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ApiService } from '../api.service';
+import { ApiService } from '../api/api.service';
 
 
 @Component({
-  selector: 'app-api',
-  templateUrl: './api.component.html'
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html'
 })
-export class ApiComponent implements OnInit {
+export class QuizComponent implements OnInit {
   data;
 
   constructor(private apiService: ApiService) { }

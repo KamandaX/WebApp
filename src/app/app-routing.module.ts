@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { ApiComponent } from './api/api.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 const routes: Routes = [
   {path: '', component : LandingPageComponent},
-  {path: 'api', component : ApiComponent}
+  {path: 'api', component : QuizComponent}
 ];
 
 @NgModule({
