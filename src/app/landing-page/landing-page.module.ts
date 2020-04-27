@@ -4,6 +4,7 @@ import { LandingSectionModule } from './landing-section/landing-section.module';
 import { HeaderModule } from '../shared/header/header.module';
 import { FooterModule } from '../shared/footer/footer.module';
 import { InfoSectionModule } from './info-section/info-section.module';
+import { ReviewSectionModule } from './review-section/review-section.module';
 
 @NgModule({
   declarations: [LandingPageComponent],
@@ -12,6 +13,7 @@ import { InfoSectionModule } from './info-section/info-section.module';
     HeaderModule,
     InfoSectionModule,
     FooterModule,
+    ReviewSectionModule,
   ],
   exports: [LandingPageComponent],
 })

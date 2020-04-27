@@ -1,0 +1,14 @@
+<section class="review-section">
+  <h2>What our users say about us</h2>
+  <div class="reviews">
+    <div class="review" *ngFor="let review of reviewsData">
+      <img src="{{review.profileImageLink}}" />
+      <div class="content">
+        <h3 class="name">{{review.userName}}</h3>
+        <span class="rating">{{review.rating}}/5 stars</span>
+        <p class="text">{{review.reviewText}}</p>
+      </div>
+    </div>
+  </div>
+  <app-button [buttonStyle]="buttonStyle" (buttonClicked)="showMoreReviews.emit()">View more</app-button>
+</section>
