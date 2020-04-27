@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { PhoneComponent } from './phone/phone.component';
+import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
   {path: '', component : LandingPageComponent},
-  {path: 'phone', component : PhoneComponent}
+  {path: 'api', component : ApiComponent}
 ];
 
 @NgModule({

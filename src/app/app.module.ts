@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LandingPageModule } from './landing-page/landing-page.module';
-import { PhoneComponent } from './phone/phone.component';
+import { ApiComponent } from './api/api.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, PhoneComponent],
+  declarations: [AppComponent, ApiComponent],
   imports: [BrowserModule, LandingPageModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

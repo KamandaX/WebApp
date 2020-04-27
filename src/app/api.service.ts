@@ -14,15 +14,15 @@ const httpOptions = {
   })
 };
 
-const apiURL = environment.apiEndpoint + '/phones';
+const apiURL = environment.apiEndpoint + '/quiz';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PhoneService {
+export class ApiService {
   constructor(private http: HttpClient) { }
 
-  getPhones() {
+  getQuiz() {
     return this.http.get(apiURL, httpOptions) 
       .pipe(
         retry(3),
