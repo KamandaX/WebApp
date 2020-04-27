@@ -1,5 +1,6 @@
 <app-header></app-header>
-<app-landing-section></app-landing-section>
+<app-landing-section (openApp)="onOpenApp()"></app-landing-section>
 <app-info-section></app-info-section>
 <app-review-section [reviewsData]="data"></app-review-section>
-<app-footer [getStartedSectionVisible]="true"></app-footer>
+<app-footer [getStartedSectionVisible]="true"
+            (openQuiz)="onOpenApp()"></app-footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReviewModel } from './review-section/review.model';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,7 +9,7 @@ import { ReviewModel } from './review-section/review.model';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navigationService: NavigationService) { }
 
   data: ReviewModel[];
 
@@ -39,4 +40,7 @@ export class LandingPageComponent implements OnInit {
     ];
   }
 
+  onOpenApp() {
+    this.navigationService.navigateToQuiz();
+  }
 }

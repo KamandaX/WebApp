@@ -10,7 +10,7 @@ import { Constants } from '../../shared/constants';
 export class ReviewSectionComponent{
 
   @Input() reviewsData: ReviewModel[];
-  @Output() showMoreReviews: EventEmitter<any>;
+  @Output() showMoreReviews: EventEmitter<any> = new EventEmitter<any>();
 
   buttonStyle = Constants.Button.Tertiary;
 }
