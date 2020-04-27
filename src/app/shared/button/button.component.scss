@@ -31,16 +31,16 @@
 .button-secondary {
   color: $col_denim;
   background-color: $col_white;
-  border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+  border: 2px solid lighten($color: $col_denim, $amount: 30);
 
   &:hover {
-    background-color: rgba($color: $col_denim, $alpha: 0.1);
-    border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+    background-color: lighten($color: $col_denim, $amount: 50);
+    border: 2px solid lighten($color: $col_denim, $amount: 20);
   }
 
   &:active {
-    background-color: rgba($color: $col_denim, $alpha: 0.3);
-    border: 2px solid rgba($color: $col_denim, $alpha: 0.3);
+    background-color: lighten($color: $col_denim, $amount: 40);
+    border: 2px solid lighten($color: $col_denim, $amount: 10);
   }
 }
 
