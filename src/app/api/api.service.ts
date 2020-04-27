@@ -23,7 +23,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getQuiz() {
-    return this.http.get(apiURL, httpOptions) 
+    return this.http.get(apiURL, httpOptions)
       .pipe(
         retry(3),
         catchError(this.handleError)
@@ -42,6 +42,6 @@ export class ApiService {
         `body was: ${error.error}`);
     }
     // return an observable with a user-facing error message
-    return throwError('Something bad happened; please try again later.')
-  };
+    return throwError('Something bad happened; please try again later.');
+  }
 }

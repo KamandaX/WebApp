@@ -8,5 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class FooterComponent {
 
   @Input() getStartedSectionVisible = false;
+  @Output() openQuiz: EventEmitter<any> = new EventEmitter<any>();
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
 }

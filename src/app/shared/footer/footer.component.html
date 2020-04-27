@@ -5,7 +5,7 @@
         <h1 class="text firstLine">Ready to make a choice?</h1>
         <h1 class="text secondLine">Let's get started!</h1>
       </div>
-      <app-button [isBig]="true">Open App</app-button>
+      <app-button [isBig]="true" (click)="openQuiz.emit()">Open App</app-button>
     </div>
   </ng-container>
   <div class="footer-content">

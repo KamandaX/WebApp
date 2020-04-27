@@ -5,7 +5,7 @@
         <div class="landing-section-slogan">
             <p>Simply answer a few questions and we will choose what is right for you!</p>
             <p>Start using Mobite now!</p>
-            <app-button class="button" [isBig]="true">Open app</app-button>
+            <app-button class="button" [isBig]="true" (buttonClicked)="openApp.emit()">Open app</app-button>
         </div>
 
         <div class="landing-section-image">
