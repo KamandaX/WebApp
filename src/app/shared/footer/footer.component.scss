@@ -1,6 +1,6 @@
 @import "../../../styles/colors.scss";
 
-.getStartedSection{
+.getStartedSection {
   background-color: $col_curiousBlue;
   min-height: 208px;
   min-width: 500px;
@@ -9,26 +9,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  .text{
+  .text {
     line-height: 40px;
     font-size: 48px;
   }
-  .firstLine{
+  .firstLine {
     color: $col_black;
   }
-  .secondLine{
+  .secondLine {
     color: $col_white;
   }
 }
-.footer-content{
+.footer-content {
   margin: 50px 120px;
   position: relative;
   display: inline-flex;
-  .footer-section{
+  .footer-section {
     font-size: 24px;
     line-height: 28px;
     padding: 0 60px 0 0;
-    ul{
+    ul {
       list-style: none;
       margin: 0;
       padding: 6px 0;
