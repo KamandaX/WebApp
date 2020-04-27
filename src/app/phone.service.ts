@@ -5,6 +5,7 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,16 +14,16 @@ const httpOptions = {
   })
 };
 
+const apiURL = environment.apiEndpoint + '/phones';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PhoneService {
-  apiURL = 'https://localhost:44378/api/v1/phones';
-
   constructor(private http: HttpClient) { }
 
   getPhones() {
-    return this.http.get(this.apiURL, httpOptions) 
+    return this.http.get(apiURL, httpOptions) 
       .pipe(
         retry(3),
         catchError(this.handleError)
