@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api/api.service';
-
+import { QuizService } from './quiz.service';
+import Question from './question.model';
 
 @Component({
   selector: 'app-quiz',
-  templateUrl: './quiz.component.html'
+  templateUrl: './quiz.component.html',
 })
 export class QuizComponent implements OnInit {
-  data;
+  public question: Question;
+  public error: string;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private quizService: QuizService) {}
 
   ngOnInit(): void {
-    this.apiService.getQuiz().subscribe(data => {
-      this.data = data;
-    });
+    this.quizService.getQuestion().subscribe(
+      (question) => (this.question = question),
+      (error) => (this.error = error)
+    );
   }
-
 }
