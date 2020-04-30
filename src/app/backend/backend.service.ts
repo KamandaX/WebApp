@@ -10,6 +10,8 @@ import { plainToClass } from 'class-transformer';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
+  'X-Api-Request': 'true',
+  Accept: 'application/json',
 });
 
 @Injectable({
