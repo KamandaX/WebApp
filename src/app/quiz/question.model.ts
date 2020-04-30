@@ -6,7 +6,4 @@ export default class Question {
 
   @Type(() => Anwser)
   answers: Anwser[];
-
-  @Expose({ name: 'next_question_id' })
-  nextQuestionID: number;
 }

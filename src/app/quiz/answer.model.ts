@@ -5,4 +5,7 @@ export default class Anwser {
 
   @Expose({ name: 'img_url' })
   imageUrl: string;
+
+  @Expose({ name: 'next_question_id' })
+  nextQuestionID: number;
 }
