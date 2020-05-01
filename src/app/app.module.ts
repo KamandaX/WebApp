@@ -9,7 +9,13 @@ import { QuizModule } from './quiz/quiz.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, LandingPageModule, AppRoutingModule, HttpClientModule, QuizModule],
+  imports: [
+    BrowserModule,
+    LandingPageModule,
+    AppRoutingModule,
+    HttpClientModule,
+    QuizModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
