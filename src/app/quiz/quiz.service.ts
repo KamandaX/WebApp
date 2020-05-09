@@ -6,7 +6,7 @@ import Question from './question.model';
   providedIn: 'root',
 })
 export class QuizService {
-  private readonly endpoint = 'question';
+  private readonly endpoint = 'questions';
 
   constructor(private backendService: BackendService) {}
 
