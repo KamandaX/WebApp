@@ -1,0 +1,6 @@
+<section class="question-option">
+  <div (click)="optionClicked.emit(option.nextQuestionID)">
+    <img src="{{option.imageUrl}}">
+    <div class="option">{{option.answer}}</div>
+  </div>
+</section>

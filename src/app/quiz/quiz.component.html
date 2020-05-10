@@ -1,2 +1,13 @@
-<pre>Error: {{ error }}</pre>
-<pre>API response: {{ question | json }}</pre>
+<app-header></app-header>
+<section class="quiz-section" *ngIf="!loading">
+<h2>Question {{questionNumber}}</h2>
+<h3>{{question.title}}</h3>
+  <div class="question-option" *ngFor="let answer of question.answers">
+    <app-question-option
+      (optionClicked)="onOptionClicked($event)"
+      [option]="answer"
+    ></app-question-option>
+  </div>
+</section>
+<app-footer></app-footer>
+<pre>{{ error }}</pre>

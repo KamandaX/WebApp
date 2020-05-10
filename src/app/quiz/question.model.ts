@@ -1,9 +1,9 @@
-import Anwser from './answer.model';
 import { Type, Expose } from 'class-transformer';
+import QuestionOption from './question-option/question-option.model';
 
 export default class Question {
   title: string;
 
-  @Type(() => Anwser)
-  answers: Anwser[];
+  @Type(() => QuestionOption)
+  answers: QuestionOption[];
 }
