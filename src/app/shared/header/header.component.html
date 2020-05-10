@@ -4,7 +4,7 @@
       <div class="title">Mobite</div>
       <img src="/assets/app-logo.svg"/></div>
     <div>
-      <app-button class="sign-up" [buttonStyle]="signUpButtonStyle">Sign Up</app-button>
+      <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="openSignupPage.emit()">Sign Up</app-button>
       <app-button class="login" (click)="openLoginPage.emit()">Login</app-button>
     </div>
   </div>

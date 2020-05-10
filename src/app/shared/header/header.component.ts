@@ -9,4 +9,5 @@ import { Constants } from '../constants';
 export class HeaderComponent {
   signUpButtonStyle = Constants.Button.Secondary;
   @Output() openLoginPage: EventEmitter<any> = new EventEmitter<any>();
+  @Output() openSignupPage: EventEmitter<any> = new EventEmitter<any>();
 }

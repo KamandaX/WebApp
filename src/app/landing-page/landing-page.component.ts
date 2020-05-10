@@ -49,4 +49,8 @@ export class LandingPageComponent implements OnInit {
   onLoginClick() {
     this.navigationService.navigateToLoginPage();
   }
+
+  onSignupClick() {
+    this.navigationService.navigateToSignupPage();
+  }
 }
