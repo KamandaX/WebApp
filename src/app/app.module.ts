@@ -1,4 +1,3 @@
-import { LoginPageModule } from './auth/login-page/login-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +6,8 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { QuizModule } from './quiz/quiz.module';
+import { LoginPageModule } from './auth/login-page/login-page.module';
+import { SignupPageModule } from './auth/signup-page/signup-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { QuizModule } from './quiz/quiz.module';
     HttpClientModule,
     QuizModule,
     LoginPageModule,
+    SignupPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
