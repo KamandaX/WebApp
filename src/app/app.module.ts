@@ -1,3 +1,4 @@
+import { LoginPageModule } from './auth/login-page/login-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,6 +16,7 @@ import { QuizModule } from './quiz/quiz.module';
     AppRoutingModule,
     HttpClientModule,
     QuizModule,
+    LoginPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
