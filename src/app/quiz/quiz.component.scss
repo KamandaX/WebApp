@@ -1,1 +1,49 @@
+@import "../../styles/colors.scss";
 
+.quiz-section {
+  width: 50vw;
+  min-width: 800px;
+  height: 420px;
+  margin: 3rem auto;
+  padding: 2rem;
+  box-shadow: 0 3px 5px $col_grey;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.loading {
+  justify-content: center;
+}
+
+.footer-content {
+  width: 50vw !important;
+  min-width: 800px !important;
+}
+
+.heading {
+  display: flex;
+
+  h2,
+  h3 {
+    line-height: 2rem;
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+  }
+
+  h2 {
+    min-width: 160px;
+    margin-right: 3rem;
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+}
+
+.question-options {
+  display: flex;
+  margin-right: 1rem;
+  justify-content: space-between;
+}

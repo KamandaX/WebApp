@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { QuizService } from './quiz.service';
 import Question from './question.model';
 import { finalize } from 'rxjs/operators';
@@ -6,7 +6,8 @@ import { finalize } from 'rxjs/operators';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.scss']
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./quiz.component.scss'],
 })
 export class QuizComponent implements OnInit {
   question: Question;
@@ -22,12 +23,13 @@ export class QuizComponent implements OnInit {
 
   loadQuestion(id: number = 0) {
     this.loading = true;
-    this.quizService.getQuestion(id).pipe(
-      finalize(() => this.loading = false)
-    ).subscribe(
-      (question) => (this.question = question),
-      (error) => (this.error = error)
-    );
+    this.quizService
+      .getQuestion(id)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe(
+        (question) => (this.question = question),
+        (error) => (this.error = error)
+      );
   }
 
   onOptionClicked(id: number) {

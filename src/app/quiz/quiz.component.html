@@ -1,13 +1,19 @@
 <app-header></app-header>
 <section class="quiz-section" *ngIf="!loading">
-<h2>Question {{questionNumber}}</h2>
-<h3>{{question.title}}</h3>
-  <div class="question-option" *ngFor="let answer of question.answers">
-    <app-question-option
-      (optionClicked)="onOptionClicked($event)"
-      [option]="answer"
-    ></app-question-option>
+  <div class="heading">
+    <h2>Question {{questionNumber}}</h2>
+    <h3>{{question.title}}</h3>
   </div>
+  <div class="question-options">
+    <app-question-option
+      *ngFor="let answer of question.answers"
+      (optionClicked)="onOptionClicked($event)" 
+      [option]="answer">
+    </app-question-option>
+  </div>
+</section>
+<section class="quiz-section loading" *ngIf="loading">
+  <img src="/assets/loader.svg">
 </section>
 <app-footer></app-footer>
 <pre>{{ error }}</pre>
