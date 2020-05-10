@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class NavigationService {
-
   constructor(private router: Router) {}
 
   navigateToLandingPage() {
@@ -11,6 +10,18 @@ export class NavigationService {
   }
 
   navigateToQuiz() {
-    return this.router.navigate( ['api']);
+    return this.router.navigate(['api']);
+  }
+
+  navigateToLoginPage() {
+    return this.router.navigate(['login']);
+  }
+
+  navigateToSignupPage() {
+    return this.router.navigate(['signup']);
+  }
+
+  navigateToResetPassword() {
+    return this.router.navigate(['reset-password']);
   }
 }

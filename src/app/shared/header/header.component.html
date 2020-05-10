@@ -5,7 +5,7 @@
       <img src="/assets/app-logo.svg"/></div>
     <div>
       <app-button class="sign-up" [buttonStyle]="signUpButtonStyle">Sign Up</app-button>
-      <app-button class="login">Login</app-button>
+      <app-button class="login" (click)="openLoginPage.emit()">Login</app-button>
     </div>
   </div>
 </section>
