@@ -1,0 +1,86 @@
+@import "../../styles/colors.scss";
+
+.auth-page {
+  display: flex;
+  flex-direction: row;
+
+  h2 {
+    margin: 4rem 0 1rem;
+    font-size: 2rem;
+  }
+}
+
+.auth-form {
+  padding: 2rem;
+  min-width: 400px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      outline: none;
+      border-radius: 2px;
+      padding: 0.5rem;
+      font-size: 1.25rem;
+      border: 1px solid $col_grey;
+      margin-bottom: 0.5rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:active,
+      &:focus {
+        border-color: $col_denim;
+      }
+    }
+
+    label {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .remember-me {
+      margin: 0.5rem 0;
+      label {
+        font-size: 1rem;
+      }
+    }
+
+    input[type="checkbox"] {
+      position: relative;
+      top: 2px;
+      margin-right: 0.5rem;
+    }
+
+    span:first-of-type {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.splash-image {
+  box-shadow: inset 7px 0 9px -7px $col_grey;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/auth/splash-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-section {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  height: 52px;
+
+  .title {
+    margin: 0;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 36px;
+    line-height: 52px;
+  }
+}

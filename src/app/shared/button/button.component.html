@@ -2,16 +2,19 @@
   <button *ngSwitchCase="secondStyle"
           class="button button-secondary"
           [class.button-large]="isBig"
+          [class.button-link]="isLink"
           (click)="buttonClicked.emit($event)">
     <ng-container *ngTemplateOutlet="content"></ng-container></button>
   <button *ngSwitchCase="tertiaryStyle"
           class="button button-tertiary"
           [class.button-large]="isBig"
+          [class.button-link]="isLink"
           (click)="buttonClicked.emit($event)">
     <ng-container *ngTemplateOutlet="content"></ng-container></button>
   <button *ngSwitchDefault
           class="button"
           [class.button-large]="isBig"
+          [class.button-link]="isLink"
           (click)="buttonClicked.emit($event)">
     <ng-container *ngTemplateOutlet="content"></ng-container></button>
 </ng-container>
