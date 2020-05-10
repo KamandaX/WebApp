@@ -17,17 +17,17 @@
             </div>
 
             <app-button>Log in</app-button>
-
-            
-            <span>Don't have an account? <app-button (click)="onSignupClick($event)" 
-                                                     [buttonStyle]="linkButtonStyle" 
-                                                     [isLink]="true">Sign up</app-button>
-            </span>
-            <span>Forgot your password? <app-button (click)="onResetPassword($event)" 
-                                                     [buttonStyle]="linkButtonStyle" 
-                                                     [isLink]="true">Reset password</app-button>
-            </span>
         </form>
+        <div class="links">
+            <div>Don't have an account? <app-button (click)="onSignupClick($event)" 
+                                                    [buttonStyle]="linkButtonStyle" 
+                                                    [isLink]="true">Sign up</app-button>
+            </div>
+            <div>Forgot your password? <app-button (click)="onResetPassword($event)" 
+                                                    [buttonStyle]="linkButtonStyle" 
+                                                    [isLink]="true">Reset password</app-button>
+            </div>
+        </div>
     </div>
     <div class="splash-image">
     </div>
