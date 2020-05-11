@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export default class Anwser {
+export default class QuestionOption {
   answer: string;
 
   @Expose({ name: 'img_url' })
