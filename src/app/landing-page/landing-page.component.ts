@@ -45,12 +45,4 @@ export class LandingPageComponent implements OnInit {
   onOpenApp() {
     this.navigationService.navigateToQuiz();
   }
-
-  onLoginClick() {
-    this.navigationService.navigateToLoginPage();
-  }
-
-  onSignupClick() {
-    this.navigationService.navigateToSignupPage();
-  }
 }

@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Constants } from '../constants';
 import { SignedInModel } from '../../auth/signed-in.model';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,22 @@ import { SignedInModel } from '../../auth/signed-in.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  constructor(public navigationService: NavigationService) {}
+
   signUpButtonStyle = Constants.Button.Secondary;
   editProfileStyle = Constants.Button.Primary;
   signOutStyle = Constants.Button.Secondary;
-  @Input() signedInUser: SignedInModel =// new SignedInModel();
+  signedInUser: SignedInModel =
+    // new SignedInModel();
     {username: 'test', userId: '1'};
-  @Output() openLoginPage: EventEmitter<any> = new EventEmitter<any>();
-  @Output() openSignupPage: EventEmitter<any> = new EventEmitter<any>();
+
+  openLoginPage() {
+    this.navigationService.navigateToLoginPage();
+  }
+
+  openSignupPage() {
+    this.navigationService.navigateToSignupPage();
+  }
 
   openEditProfilePage() {}
   signOut() {}
