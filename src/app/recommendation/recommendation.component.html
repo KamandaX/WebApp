@@ -1,0 +1,14 @@
+<app-header></app-header>
+<section class="recommendation-section" *ngIf="!loading">
+  <app-phone
+    *ngFor="let phone of recommendation.phones; let i = index"
+    [phoneNumber]="i + 1"
+    [phone]="phone"
+    class="recommendation phone-{{i + 1}}">
+  </app-phone>
+</section>
+<section class="recommendation-section loading" *ngIf="loading">
+  <img src="/assets/loader.svg">
+</section>
+<app-footer></app-footer>
+<!-- <pre>{{ error }}</pre> -->
