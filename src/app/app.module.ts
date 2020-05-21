@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuizModule } from './quiz/quiz.module';
 import { LoginPageModule } from './auth/login-page/login-page.module';
 import { SignupPageModule } from './auth/signup-page/signup-page.module';
+import { RecommendationModule } from './recommendation/recommendation.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { SignupPageModule } from './auth/signup-page/signup-page.module';
     QuizModule,
     LoginPageModule,
     SignupPageModule,
+    RecommendationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
