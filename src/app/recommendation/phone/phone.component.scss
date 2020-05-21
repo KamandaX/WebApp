@@ -1,0 +1,27 @@
+.phone-information {
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: row;
+
+  p {
+    margin: 0;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.phone-specifications {
+  padding: 0 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+
+  display: grid;
+  grid:
+    repeat(3, minmax(min-content, 30%))
+    / auto-flow minmax(min-content, 200px);
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
