@@ -100,19 +100,3 @@ export class RecommendationComponent implements OnInit {
     });
   }
 }
-
-/*
-{
-          manufacturer: 'Samsung',
-          model_name: 'Galaxy A51',
-          display_resoliution: 'Resolution 1080 x 2400 pixels',
-          price: '280.00€',
-          launch_date: '2019 December 16',
-          screen_size: 'Size 6.5 inches',
-          protection_rating: '',
-          processor: 'Exynos 9611 (10nm)',
-          storage: '64 - 128GB',
-          ram: '4 - 8GB RAM',
-          battery_size: '4000mAh',
-        },
-*/
