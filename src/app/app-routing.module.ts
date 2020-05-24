@@ -8,7 +8,7 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'api', component: QuizComponent },
+  { path: 'quiz', component: QuizComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'recommendation', component: RecommendationComponent },
