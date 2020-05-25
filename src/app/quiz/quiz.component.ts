@@ -36,8 +36,6 @@ export class QuizComponent implements OnInit {
     if (id) {
       this.questionNumber++;
       this.loadQuestion(id);
-    } else {
-      console.log('Api request');
     }
   }
 }
