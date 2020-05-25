@@ -1,0 +1,55 @@
+<div>
+  <h2>{{phoneNumber}}. {{phone.manufacturer}} {{phone.model}}</h2>
+  <div class="phone-information">
+    <img src="{{phone.imageUrl}}" />
+    <div class="phone-specifications">
+      <div>
+        <p class="bold">Display</p>
+        <p>
+          Size {{phone.screenSize.toFixed(2)}} inches<br />
+          {{phone.displayResoliutionHorizontal}} x {{phone.displayResoliutionVertical}} px
+        </p>
+      </div>
+
+      <div *ngIf="getMainCamera() != null">
+        <p class="bold">Main camera</p>
+        <p>{{getMainCamera().megapixels}} MP, f/{{getMainCamera().fNumber}}</p>
+      </div>
+
+      <div *ngIf="getSelfieCamera() != null">
+        <p class="bold">Selfie camera</p>
+        <p>{{getSelfieCamera().megapixels}} MP, f/{{getSelfieCamera().fNumber}}</p>
+      </div>
+
+      <div>
+        <p class="bold">Processor</p>
+        <p>{{phone.processor}}</p>
+      </div>
+
+      <div>
+        <p class="bold">Price</p>
+        <p>{{phone.price.toFixed(2)}}€</p>
+      </div>
+
+      <div *ngIf="phoneNumber == 1">
+        <p class="bold">Launch Date</p>
+        <p>{{getFormattedLaunchDate()}}</p>
+      </div>
+
+      <div>
+        <p class="bold">Storage</p>
+        <p>{{phone.storage}} GB</p>
+      </div>
+
+      <div *ngIf="phoneNumber == 1">
+        <p class="bold">RAM</p>
+        <p>{{phone.ram}} GB</p>
+      </div>
+
+      <div *ngIf="phoneNumber == 1">
+        <p class="bold">Battery</p>
+        <p>{{phone.batterySize}} mAh</p>
+      </div>
+    </div>
+  </div>
+</div>
