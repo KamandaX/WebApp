@@ -1,11 +1,11 @@
 <section class="header-section">
   <div class="header">
-    <div class="icon-section">
+    <div class="icon-section" (click)="onLogoClick()">
       <div class="title">Mobite</div>
       <img src="/assets/app-logo.svg"/></div>
     <div>
-      <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="openSignupPage.emit()">Sign Up</app-button>
-      <app-button class="login" (click)="openLoginPage.emit()">Login</app-button>
+      <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="onSignupClick()">Sign Up</app-button>
+      <app-button class="login" (click)="onLoginClick()">Login</app-button>
     </div>
   </div>
 </section>
