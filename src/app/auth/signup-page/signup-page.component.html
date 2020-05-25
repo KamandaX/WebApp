@@ -7,18 +7,18 @@
         <h2>Sign up</h2>
         <form>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+            <input [(ngModel)]="registerUserData.email" type="email" id="email" name="email">
             <label for="username">Username</label>
-            <input type="username" id="username" name="username">
+            <input [(ngModel)]="registerUserData.username" type="username" id="username" name="username">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input [(ngModel)]="registerUserData.password" type="password" id="password" name="password">
             <label for="repeat-password">Repeat password</label>
-            <input type="password" id="repeat-password" name="repeat-password">
-            <app-button>Sign up</app-button>
+            <input [(ngModel)]="repeatPassword" type="password" id="repeat-password" name="repeat-password">
+            <app-button (buttonClicked)="registerUser()">Sign up</app-button>
         </form>
         <div class="links">
             <div>Already have an account? <app-button (click)="onLoginClick()"
-                                                    [buttonStyle]="linkButtonStyle" 
+                                                    [buttonStyle]="linkButtonStyle"
                                                     [isLink]="true">Log in</app-button>
             </div>
         </div>

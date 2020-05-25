@@ -3,13 +3,13 @@
     <div class="icon-section">
       <div class="title">Mobite</div>
       <img src="/assets/app-logo.svg"/></div>
-    <div *ngIf="!signedInUser.userId else UserSignedIn">
+    <div *ngIf="!signedInUser else UserSignedIn">
       <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="openSignupPage()">Sign Up</app-button>
       <app-button class="login" (click)="openLoginPage()">Login</app-button>
     </div>
     <ng-template #UserSignedIn>
       <div class="loggedIn">
-        Welcome {{signedInUser.username}}!
+        You are signed in!
         <app-button class="profile" [buttonStyle]="editProfileStyle" (click)="openEditProfilePage()">User settings</app-button>
         <app-button class="sign-out" [buttonStyle]="signOutStyle" (click)="signOut()">Sign out</app-button>
       </div>

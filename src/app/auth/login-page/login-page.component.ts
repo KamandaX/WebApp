@@ -1,6 +1,7 @@
 import { NavigationService } from './../../services/navigation.service';
 import { Component } from '@angular/core';
 import { Constants } from './../../shared/constants';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,9 +9,11 @@ import { Constants } from './../../shared/constants';
   styleUrls: ['./login-page.component.scss', '../auth.component.scss'],
 })
 export class LoginPageComponent {
+  loginUserData = {email: null, password: null};
   linkButtonStyle = Constants.Button.Tertiary;
 
-  constructor(public navigationService: NavigationService) {}
+  constructor(public navigationService: NavigationService,
+              private auth: AuthService) {}
 
   onLogoClick() {
     this.navigationService.navigateToLandingPage();
@@ -21,8 +24,13 @@ export class LoginPageComponent {
     this.navigationService.navigateToSignupPage();
   }
 
-  onResetPassword(e) {
-    e.preventDefault();
-    this.navigationService.navigateToResetPassword();
+  onLoginUser() {
+    this.auth.loginUser(this.loginUserData).subscribe(
+      result => {
+        localStorage.setItem('token', result.token);
+        this.navigationService.navigateToQuiz();
+      },
+      err => console.log(err)
+    );
   }
 }

@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Constants } from '../constants';
 import { SignedInModel } from '../../auth/signed-in.model';
 import { NavigationService } from '../../services/navigation.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +10,13 @@ import { NavigationService } from '../../services/navigation.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(public navigationService: NavigationService) {}
+  constructor(private navigationService: NavigationService,
+              private authService: AuthService) {}
 
   signUpButtonStyle = Constants.Button.Secondary;
   editProfileStyle = Constants.Button.Primary;
   signOutStyle = Constants.Button.Secondary;
-  signedInUser: SignedInModel =
-    // new SignedInModel();
-    {username: 'test', userId: '1'};
+  signedInUser: boolean = this.authService.loggedIn();
 
   openLoginPage() {
     this.navigationService.navigateToLoginPage();
@@ -27,5 +27,8 @@ export class HeaderComponent {
   }
 
   openEditProfilePage() {}
-  signOut() {}
+
+  signOut() {
+    this.authService.logoutUser();
+  }
 }
