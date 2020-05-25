@@ -10,7 +10,7 @@ export class NavigationService {
   }
 
   navigateToQuiz() {
-    return this.router.navigate(['api']);
+    return this.router.navigate(['quiz']);
   }
 
   navigateToLoginPage() {

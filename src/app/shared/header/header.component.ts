@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { Constants } from '../constants';
+import { NavigationService } from './../../services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,18 @@ import { Constants } from '../constants';
 })
 export class HeaderComponent {
   signUpButtonStyle = Constants.Button.Secondary;
-  @Output() openLoginPage: EventEmitter<any> = new EventEmitter<any>();
-  @Output() openSignupPage: EventEmitter<any> = new EventEmitter<any>();
+
+  constructor(public navigationService: NavigationService) {}
+
+  onLogoClick() {
+    this.navigationService.navigateToLandingPage();
+  }
+
+  onLoginClick() {
+    this.navigationService.navigateToLoginPage();
+  }
+
+  onSignupClick() {
+    this.navigationService.navigateToSignupPage();
+  }
 }
