@@ -1,12 +1,12 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { NavigationService } from '../services/navigation.service';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
-  'X-Api-Request': 'true'});
+  'X-Api-Request': 'true',
+  Accept: 'application/json'
+});
 
 @Injectable()
 export class AuthService {
@@ -14,7 +14,6 @@ export class AuthService {
   private loginUrl = 'http://localhost:5000/api/v1/users/login';
 
   constructor(private http: HttpClient,
-              private router: Router,
               private navigationService: NavigationService) { }
 
   registerUser(user) {

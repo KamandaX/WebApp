@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Constants } from './../../shared/constants';
-import { NavigationService } from './../../services/navigation.service';
+import { Constants } from '../../shared/constants';
+import { NavigationService } from '../../services/navigation.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class SignupPageComponent {
   linkButtonStyle = Constants.Button.Tertiary;
   registerUserData = {email: null, username: null, password: null};
   repeatPassword = null;
+  errorText = null;
 
   constructor(public navigationService: NavigationService,
               private auth: AuthService) {}
@@ -25,14 +26,19 @@ export class SignupPageComponent {
   }
 
   registerUser() {
-    if (this.registerUserData.password === this.repeatPassword) {
-      this.auth.registerUser(this.registerUserData).subscribe(
-        result => {
-          localStorage.setItem('token', result.token);
-          this.navigationService.navigateToQuiz();
-        },
-        err => console.log(err)
-      );
+    this.errorText = null;
+    if (this.registerUserData.password !== this.repeatPassword) {
+      this.errorText = 'Passwords must match';
+      return;
     }
+    this.auth.registerUser(this.registerUserData).subscribe(
+      result => {
+        localStorage.setItem('token', result.token);
+        this.navigationService.navigateToQuiz();
+      },
+      err => {
+        this.errorText = err.error.details ? err.error.details : err.error.title;
+      }
+    );
   }
 }

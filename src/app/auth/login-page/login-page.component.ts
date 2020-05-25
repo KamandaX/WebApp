@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login-page.component.scss', '../auth.component.scss'],
 })
 export class LoginPageComponent {
+  errorText = null;
   loginUserData = {email: null, password: null};
   linkButtonStyle = Constants.Button.Tertiary;
 
@@ -25,12 +26,15 @@ export class LoginPageComponent {
   }
 
   onLoginUser() {
+    this.errorText = null;
     this.auth.loginUser(this.loginUserData).subscribe(
       result => {
         localStorage.setItem('token', result.token);
         this.navigationService.navigateToQuiz();
       },
-      err => console.log(err)
+      err => {
+        this.errorText = err.error.details ? err.error.details : err.error.title;
+      }
     );
   }
 }

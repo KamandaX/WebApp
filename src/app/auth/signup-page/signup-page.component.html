@@ -2,25 +2,55 @@
     <div class="auth-form signup-form">
         <div class="icon-section" (click)="onLogoClick()">
             <h1 class="title">Mobite</h1>
-            <img src="/assets/app-logo.svg" />
+            <img src="/assets/app-logo.svg"/>
         </div>
         <h2>Sign up</h2>
-        <form>
+        <form #f>
             <label for="email">Email</label>
-            <input [(ngModel)]="registerUserData.email" type="email" id="email" name="email">
+            <input type="email" id="email" name="email" [(ngModel)]="registerUserData.email" required
+                   pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #email="ngModel">
+            <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors.required">
+                    Email is required.
+                </div>
+                <div *ngIf="email.errors.pattern">
+                    Email is invalid.
+                </div>
+            </div>
             <label for="username">Username</label>
-            <input [(ngModel)]="registerUserData.username" type="username" id="username" name="username">
+            <input [(ngModel)]="registerUserData.username" required type="username" id="username" name="username"
+                   #username="ngModel">
+            <div class="error" *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div *ngIf="username.errors.required">
+                    Username is required.
+                </div>
+            </div>
             <label for="password">Password</label>
-            <input [(ngModel)]="registerUserData.password" type="password" id="password" name="password">
+            <input [(ngModel)]="registerUserData.password" type="password" id="password" name="password" required
+                   pattern="^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,}$"
+                   #password="ngModel">
+            <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="password.errors.pattern">
+                    Password has to contain minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character.
+                </div>
+            </div>
             <label for="repeat-password">Repeat password</label>
             <input [(ngModel)]="repeatPassword" type="password" id="repeat-password" name="repeat-password">
-            <app-button (buttonClicked)="registerUser()">Sign up</app-button>
+            <app-button [disabled]="f.invalid" (buttonClicked)="registerUser()">Sign up</app-button>
         </form>
         <div class="links">
-            <div>Already have an account? <app-button (click)="onLoginClick()"
-                                                    [buttonStyle]="linkButtonStyle"
-                                                    [isLink]="true">Log in</app-button>
+            <div>Already have an account?
+                <app-button (click)="onLoginClick()"
+                            [buttonStyle]="linkButtonStyle"
+                            [isLink]="true">Log in
+                </app-button>
             </div>
+        </div>
+        <div class="error">
+            {{errorText}}
         </div>
     </div>
     <div class="splash-image">
