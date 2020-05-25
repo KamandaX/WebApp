@@ -7,9 +7,10 @@ import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [SignupPageComponent],
-  providers: [NavigationService, AuthService],
-  exports: [SignupPageComponent],
-  imports: [ButtonModule, FormsModule, ReactiveFormsModule, CommonModule],
+    declarations: [SignupPageComponent],
+    providers: [NavigationService, AuthService],
+    exports: [SignupPageComponent],
+    imports: [ButtonModule, FormsModule, ReactiveFormsModule, CommonModule],
 })
-export class SignupPageModule {}
+export class SignupPageModule {
+}

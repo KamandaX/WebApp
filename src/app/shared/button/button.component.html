@@ -1,24 +1,29 @@
 <ng-container [ngSwitch]="buttonStyle">
-  <button *ngSwitchCase="secondStyle"
-          class="button button-secondary"
-          [disabled]="disabled"
-          [class.button-large]="isBig"
-          [class.button-link]="isLink"
-          (click)="buttonClicked.emit($event)">
-    <ng-container *ngTemplateOutlet="content"></ng-container></button>
-  <button *ngSwitchCase="tertiaryStyle"
-          class="button button-tertiary"
-          [disabled]="disabled"
-          [class.button-large]="isBig"
-          [class.button-link]="isLink"
-          (click)="buttonClicked.emit($event)">
-    <ng-container *ngTemplateOutlet="content"></ng-container></button>
-  <button *ngSwitchDefault
-          class="button"
-          [disabled]="disabled"
-          [class.button-large]="isBig"
-          [class.button-link]="isLink"
-          (click)="buttonClicked.emit($event)">
-    <ng-container *ngTemplateOutlet="content"></ng-container></button>
+    <button *ngSwitchCase="secondStyle"
+            class="button button-secondary"
+            [disabled]="disabled"
+            [class.button-large]="isBig"
+            [class.button-link]="isLink"
+            (click)="buttonClicked.emit($event)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </button>
+    <button *ngSwitchCase="tertiaryStyle"
+            class="button button-tertiary"
+            [disabled]="disabled"
+            [class.button-large]="isBig"
+            [class.button-link]="isLink"
+            (click)="buttonClicked.emit($event)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </button>
+    <button *ngSwitchDefault
+            class="button"
+            [disabled]="disabled"
+            [class.button-large]="isBig"
+            [class.button-link]="isLink"
+            (click)="buttonClicked.emit($event)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </button>
 </ng-container>
-<ng-template #content><ng-content></ng-content></ng-template>
+<ng-template #content>
+    <ng-content></ng-content>
+</ng-template>
