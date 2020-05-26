@@ -1,6 +1,6 @@
 <section class="question-option">
   <div (click)="optionClicked.emit(option.nextQuestionID)">
-    <img src="{{option.imageUrl}}">
+    <img src="{{option.imageUrl ? option.imageUrl : 'https://rawcdn.githack.com/KamandaX/CDN/62c5b3e523e5ad09fee5ce71d69d02c5c72d447e/mobite-logo.png'}}">
     <div class="option">{{option.answer}}</div>
   </div>
 </section>
