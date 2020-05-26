@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import Recommendation from './recommendation.model';
 import { RecommendationDataService } from './recommendation-data.service';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-recommendation',
@@ -10,12 +11,16 @@ import { RecommendationDataService } from './recommendation-data.service';
 })
 export class RecommendationComponent implements OnInit {
   loading = false;
-  recommendation: Recommendation = new Recommendation();
+  recommendation: Recommendation = null;
 
-  constructor(private recommendationDataService: RecommendationDataService) {
+  constructor(private recommendationDataService: RecommendationDataService,
+              private navigationService: NavigationService) {
   }
 
   ngOnInit(): void {
     this.recommendation = this.recommendationDataService.getRecommendation();
+    if (!this.recommendation) {
+        this.navigationService.navigateToQuiz();
+    }
   }
 }

@@ -5,7 +5,7 @@ import Recommendation from './recommendation.model';
     providedIn: 'root',
 })
 export class RecommendationDataService {
-    recommendation: Recommendation = new Recommendation();
+    recommendation: Recommendation = null;
 
     setRecommendation(data) {
         this.recommendation = data;
