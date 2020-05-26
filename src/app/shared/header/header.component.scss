@@ -22,8 +22,13 @@
         text-shadow: 1px 1px $col_white;
       }
     }
-    .sign-up {
+    .sign-up, .profile {
       margin-right: 30px;
+      margin-left: 15px;
+    }
+    .loggedIn {
+      font-size: 1.5rem;
+      color: $col_white;
     }
   }
 }

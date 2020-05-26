@@ -1,28 +1,41 @@
 import { NavigationService } from './../../services/navigation.service';
 import { Component } from '@angular/core';
 import { Constants } from './../../shared/constants';
+import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss', '../auth.component.scss'],
+    selector: 'app-login-page',
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.scss', '../auth.component.scss'],
 })
 export class LoginPageComponent {
-  linkButtonStyle = Constants.Button.Tertiary;
+    errorText = null;
+    loginUserData = {email: null, password: null};
+    linkButtonStyle = Constants.Button.Tertiary;
 
-  constructor(public navigationService: NavigationService) {}
+    constructor(public navigationService: NavigationService,
+                private auth: AuthService) {
+    }
 
-  onLogoClick() {
-    this.navigationService.navigateToLandingPage();
-  }
+    onLogoClick() {
+        this.navigationService.navigateToLandingPage();
+    }
 
-  onSignupClick(e) {
-    e.preventDefault();
-    this.navigationService.navigateToSignupPage();
-  }
+    onSignupClick(e) {
+        e.preventDefault();
+        this.navigationService.navigateToSignupPage();
+    }
 
-  onResetPassword(e) {
-    e.preventDefault();
-    this.navigationService.navigateToResetPassword();
-  }
+    onLoginUser() {
+        this.errorText = null;
+        this.auth.loginUser(this.loginUserData).subscribe(
+            result => {
+                localStorage.setItem('token', result.token);
+                this.navigationService.navigateToQuiz();
+            },
+            err => {
+                this.errorText = err.error.details ? err.error.details : err.error.title ? err.error.title : 'Something bad happened, try again later';
+            }
+        );
+    }
 }
