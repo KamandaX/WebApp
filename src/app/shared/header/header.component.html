@@ -1,11 +1,20 @@
 <section class="header-section">
-  <div class="header">
-    <div class="icon-section" (click)="onLogoClick()">
-      <div class="title">Mobite</div>
-      <img src="/assets/app-logo.svg"/></div>
-    <div>
-      <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="onSignupClick()">Sign Up</app-button>
-      <app-button class="login" (click)="onLoginClick()">Login</app-button>
+    <div class="header">
+        <div class="icon-section" (click)="onLogoClick()">
+            <div class="title">Mobite</div>
+            <img src="/assets/app-logo.svg"/></div>
+        <div *ngIf="!signedInUser else UserSignedIn">
+            <app-button class="sign-up" [buttonStyle]="signUpButtonStyle" (click)="onSignupClick()">Sign Up</app-button>
+            <app-button class="login" (click)="onLoginClick()">Login</app-button>
+        </div>
+        <ng-template #UserSignedIn>
+            <div class="loggedIn">
+                Welcome {{username}}!
+                <app-button class="profile" [buttonStyle]="editProfileStyle" (click)="openEditProfilePage()">User
+                    settings
+                </app-button>
+                <app-button class="sign-out" [buttonStyle]="signOutStyle" (click)="signOut()">Sign out</app-button>
+            </div>
+        </ng-template>
     </div>
-  </div>
 </section>

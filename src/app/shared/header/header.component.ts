@@ -1,26 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Constants } from '../constants';
-import { NavigationService } from './../../services/navigation.service';
+import { NavigationService } from '../../services/navigation.service';
+import { AuthService } from '../../auth/auth.service';
+import jwtDecode from 'jwt-decode';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  signUpButtonStyle = Constants.Button.Secondary;
+export class HeaderComponent implements OnInit{
+    constructor(private navigationService: NavigationService,
+                private authService: AuthService) {
+    }
 
-  constructor(public navigationService: NavigationService) {}
+    signUpButtonStyle = Constants.Button.Secondary;
+    editProfileStyle = Constants.Button.Primary;
+    signOutStyle = Constants.Button.Secondary;
+    signedInUser: boolean = this.authService.loggedIn();
+    username = null;
 
-  onLogoClick() {
-    this.navigationService.navigateToLandingPage();
-  }
+    ngOnInit() {
+        if (this.authService.loggedIn()) {
+            this.username = jwtDecode(this.authService.getToken()).unique_name;
+        }
+    }
 
-  onLoginClick() {
-    this.navigationService.navigateToLoginPage();
-  }
+    onLoginClick() {
+        this.navigationService.navigateToLoginPage();
+    }
 
-  onSignupClick() {
-    this.navigationService.navigateToSignupPage();
-  }
+    onSignupClick() {
+        this.navigationService.navigateToSignupPage();
+    }
+
+    onLogoClick() {
+        this.navigationService.navigateToLandingPage();
+    }
+
+    openEditProfilePage() {
+    }
+
+    signOut() {
+        this.authService.logoutUser();
+    }
 }
