@@ -7,10 +7,10 @@ export default class Phone {
   @Expose({ name: 'model_name' })
   model: string;
 
-  @Expose({ name: 'display_resoliution_horizontal' })
+  @Expose({ name: 'display_resolution_horizontal' })
   displayResoliutionHorizontal: string;
 
-  @Expose({ name: 'display_resoliution_vertical' })
+  @Expose({ name: 'display_resolution_vertical' })
   displayResoliutionVertical: string;
 
   price: number;
