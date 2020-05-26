@@ -8,4 +8,6 @@ export default class QuestionOption {
 
   @Expose({ name: 'next_question_id' })
   nextQuestionID: number;
+
+  multiplier: number;
 }
