@@ -30,12 +30,10 @@ export class LoginPageComponent {
         this.errorText = null;
         this.auth.loginUser(this.loginUserData).subscribe(
             result => {
-                console.log(result);
                 localStorage.setItem('token', result.token);
                 this.navigationService.navigateToQuiz();
             },
             err => {
-                console.log(err);
                 this.errorText = err.error.details ? err.error.details : err.error.title ? err.error.title : 'Something bad happened, try again later';
             }
         );
