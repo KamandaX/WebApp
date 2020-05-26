@@ -1,6 +1,7 @@
 import { BackendService } from '../backend/backend.service';
 import { Injectable } from '@angular/core';
 import Question from './question.model';
+import { AnswerModel } from './answer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,9 @@ export class QuizService {
       Question,
       `${this.endpoint}/${id}`
     );
+  }
+
+  getRecommendation(answers: AnswerModel[]){
+      return this.backendService.getRecommendations(answers);
   }
 }

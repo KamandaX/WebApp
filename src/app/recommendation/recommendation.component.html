@@ -1,10 +1,16 @@
 <app-header></app-header>
 <section class="recommendation-section" *ngIf="!loading">
+    <app-phone
+        *ngIf="recommendation.mainRecommendation"
+        [phoneNumber]="1"
+        [phone]="recommendation.mainRecommendation"
+        class="recommendation phone-1">
+    </app-phone>
   <app-phone
-    *ngFor="let phone of recommendation.phones; let i = index"
-    [phoneNumber]="i + 1"
+    *ngFor="let phone of recommendation.secondaryRecommendation; let i = index"
+    [phoneNumber]="i + 2"
     [phone]="phone"
-    class="recommendation phone-{{i + 1}}">
+    class="recommendation phone-{{i + 2}}">
   </app-phone>
 </section>
 <section class="recommendation-section loading" *ngIf="loading">

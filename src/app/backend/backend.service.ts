@@ -7,6 +7,7 @@ import { throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { plainToClass } from 'class-transformer';
+import Recommendation from '../recommendation/recommendation.model';
 
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
@@ -47,6 +48,14 @@ export class BackendService {
         map((data) => plainToClass<T[], any>(dataType, data)),
         retry(3),
         catchError(this.handleError)
+      );
+  }
+
+  getRecommendations(payload) {
+      return this.http.post(`${environment.apiEndpoint}/recommendation`, payload, { headers }).pipe(
+          map(data => plainToClass<Recommendation, any>(Recommendation, data)),
+          retry(3),
+          catchError(this.handleError)
       );
   }
 

@@ -24,4 +24,8 @@ export class NavigationService {
   navigateToResetPassword() {
     return this.router.navigate(['reset-password']);
   }
+
+  navigateToRecommendation() {
+    return this.router.navigate(['recommendation']);
+  }
 }

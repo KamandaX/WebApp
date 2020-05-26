@@ -17,13 +17,16 @@ export class HeaderComponent implements OnInit{
     signUpButtonStyle = Constants.Button.Secondary;
     editProfileStyle = Constants.Button.Primary;
     signOutStyle = Constants.Button.Secondary;
-    signedInUser: boolean = this.authService.loggedIn();
     username = null;
 
     ngOnInit() {
         if (this.authService.loggedIn()) {
             this.username = jwtDecode(this.authService.getToken()).unique_name;
         }
+    }
+
+    get signedInUser() {
+        return this.authService.loggedIn();
     }
 
     onLoginClick() {
