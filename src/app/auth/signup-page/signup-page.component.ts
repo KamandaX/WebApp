@@ -37,7 +37,7 @@ export class SignupPageComponent {
         this.navigationService.navigateToQuiz();
       },
       err => {
-        this.errorText = err.error.details ? err.error.details : err.error.title;
+        this.errorText = err.error.details ? err.error.details : err.error.title ? err.error.title : 'Something bad happened, try again later';
       }
     );
   }
