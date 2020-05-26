@@ -1,7 +1,9 @@
 <div>
   <h2>{{phoneNumber}}. {{phone.manufacturer}} {{phone.model}}</h2>
   <div class="phone-information">
-    <img src="{{phone.imageUrl ? phone.imageUrl : '/assets/app-logo.svg'}}" />
+    <div class="phone-image">
+        <img src="{{phone.imageUrl ? phone.imageUrl : '/assets/app-logo.svg'}}" />
+    </div>
     <div class="phone-specifications">
       <div>
         <p class="bold">Display</p>
