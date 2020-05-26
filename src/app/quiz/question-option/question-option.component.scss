@@ -13,11 +13,13 @@
     height: 200px;
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 1px solid $col_curiousBlue;
     background-color: $col_white;
     border-radius: 5px;
     img {
         max-width: 198px;
+        max-height: 198px;
         height: auto;
     }
 }
