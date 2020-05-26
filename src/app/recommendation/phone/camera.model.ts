@@ -1,9 +1,9 @@
 import { Expose } from 'class-transformer';
 
 export default class Camera {
-  side: string;
-  megapixels: number;
+    side: number;
+    megapixels: number;
 
-  @Expose({ name: 'f-number' })
-  fNumber: number;
+    @Expose({ name: 'f-number' })
+    fNumber: number;
 }

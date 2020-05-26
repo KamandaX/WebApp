@@ -1,6 +1,6 @@
 enum Side {
-  Main = 'Main',
-  Selfie = 'Selfie',
+    Main = 0,
+    Selfie = 1,
 }
 
 export default Side;
