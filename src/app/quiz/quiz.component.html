@@ -8,7 +8,7 @@
     <div class="question-options">
       <app-question-option
         *ngFor="let answer of question.answers"
-        (optionClicked)="onOptionClicked($event, answer)"
+        (optionClicked)="onOptionClicked(answer)"
         [option]="answer">
       </app-question-option>
     </div>
