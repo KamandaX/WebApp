@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('FooterComponent', () => {
     let fixture: ComponentFixture<FooterComponent>;
@@ -24,8 +25,8 @@ describe('FooterComponent', () => {
     });
 
     it('should have "Get Started" section hidden by default', () => {
-        const getStartedSection: HTMLElement = fixture.debugElement.nativeElement.querySelector(
-            '.getStartedSection'
+        const getStartedSection = fixture.debugElement.query(
+            By.css('.getStartedSection')
         );
         expect(getStartedSection).toBeFalsy();
     });
@@ -33,8 +34,8 @@ describe('FooterComponent', () => {
     it('should have "Get Started" section visible when getStartedSectionVisible is true', () => {
         fixture.componentInstance.getStartedSectionVisible = true;
         fixture.detectChanges();
-        const getStartedSection: HTMLElement = fixture.debugElement.nativeElement.querySelector(
-            '.getStartedSection'
+        const getStartedSection = fixture.debugElement.query(
+            By.css('.getStartedSection')
         );
         expect(getStartedSection).toBeTruthy();
     });
