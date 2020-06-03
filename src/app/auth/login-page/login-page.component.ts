@@ -10,12 +10,13 @@ import { AuthService } from '../auth.service';
 })
 export class LoginPageComponent {
     errorText = null;
-    loginUserData = {email: null, password: null};
+    loginUserData = { email: null, password: null };
     linkButtonStyle = Constants.Button.Tertiary;
 
-    constructor(public navigationService: NavigationService,
-                private auth: AuthService) {
-    }
+    constructor(
+        public navigationService: NavigationService,
+        public auth: AuthService
+    ) {}
 
     onLogoClick() {
         this.navigationService.navigateToLandingPage();
@@ -29,12 +30,16 @@ export class LoginPageComponent {
     onLoginUser() {
         this.errorText = null;
         this.auth.loginUser(this.loginUserData).subscribe(
-            result => {
+            (result) => {
                 localStorage.setItem('token', result.token);
                 this.navigationService.navigateToQuiz();
             },
-            err => {
-                this.errorText = err.error.details ? err.error.details : err.error.title ? err.error.title : 'Something bad happened, try again later';
+            (err) => {
+                this.errorText = err.error.details
+                    ? err.error.details
+                    : err.error.title
+                    ? err.error.title
+                    : 'Something bad happened, try again later';
             }
         );
     }

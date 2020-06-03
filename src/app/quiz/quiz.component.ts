@@ -20,9 +20,9 @@ export class QuizComponent implements OnInit {
     loading = false;
     answers: AnswerModel[] = [];
 
-    constructor(private quizService: QuizService,
-                private recommendationService: RecommendationDataService,
-                private navigationService: NavigationService) {
+    constructor(public quizService: QuizService,
+                public recommendationService: RecommendationDataService,
+                public navigationService: NavigationService) {
     }
 
     ngOnInit(): void {
@@ -43,10 +43,10 @@ export class QuizComponent implements OnInit {
             );
     }
 
-    onOptionClicked(id: number, answer: QuestionOption) {
+    onOptionClicked(answer: QuestionOption) {
         this.answers.push({aspect: this.question.aspect, multiplier: answer.multiplier});
-        if (id) {
-            this.loadQuestion(id);
+        if (answer.nextQuestionID) {
+            this.loadQuestion(answer.nextQuestionID);
         } else {
             this.loading = true;
             this.quizService.getRecommendation(this.answers).pipe(finalize(() => this.loading = false))
